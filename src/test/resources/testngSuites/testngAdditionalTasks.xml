@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TEST_JENKINS_additional_tasks" verbose="1" >
+    <test name="JenkinsTestsAdditionalTasks" >
+        <parameter name="BASE_URL" value="http://localhost:8081/"/>
+
+        <parameter name="userForLogIn" value="admin"/>
+        <parameter name="passwordForLogIn" value="admin"/>
+
+        <parameter name="userForTest" value="someuser"/>
+        <parameter name="emptyUserForTest" value=""/>
+        <parameter name="passwordForTest" value="somepassword"/>
+        <parameter name="fullNameForTest" value="Some Full Name"/>
+        <parameter name="emailAddressForTest" value="some@addr.dom"/>
+        <parameter name="color" value="rgba(75, 117, 139, 1)"/>
+
+
+        <classes>
+            <class name="com.epam.training.JenkinsAdditionalTests">
+                <methods>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

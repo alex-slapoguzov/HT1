@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TESTJENKINS" verbose="1" >
+    <test name="JenkinsTestsSuite" >
+        <parameter name="BASE_URL" value="http://localhost:8081/"/>
+
+        <parameter name="userForLogIn" value="admin"/>
+        <parameter name="passwordForLogIn" value="admin"/>
+
+        <parameter name="userForTest" value="someuser"/>
+        <parameter name="passwordForTest" value="somepassword"/>
+        <parameter name="fullNameForTest" value="Some Full Name"/>
+        <parameter name="emailAddressForTest" value="some@addr.dom"/>
+
+        <parameter name="tagname1" value="dt"/>
+        <parameter name="tagname2" value="dd"/>
+        <parameter name="tagname3" value="tr"/>
+        <parameter name="tagname4" value="td"/>
+
+        <parameter name="textConfirmation" value="Are you sure about deleting the user from Jenkins?"/>
+        <parameter name="manageUsersText1" value="Manage Users"/>
+        <parameter name="manageUsersText2" value="Create/delete/modify users that can log in to this Jenkins"/>
+        <parameter name="textHrefAttribute1" value="user/someuser/delete"/>
+        <parameter name="textHrefAttribute2" value="user/admin/delete"/>
+
+        <classes>
+            <class name="com.epam.training.JenkinsTests">
+                <methods>
+                    <include name="testManageJenkins"/>
+                    <include name="testManageUsers"/>
+                    <include name="testCreateUser"/>
+                    <include name="testCreateNewUser"/>
+                    <include name="testDeleteButton"/>
+                    <include name="testDeleteUser"/>
+                    <include name="testLinkWithHrefPresent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
